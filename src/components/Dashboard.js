@@ -1,32 +1,48 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import Tweet from './Tweet'
+import Question from './Question'
 
 class Dashboard extends Component {
+
+  state = {
+    answered: false,
+    questions: {}
+  }
+
   render() {
-    // console.log(this.props)
+
+    const { answered } = this.state
+    const { questionIds } = this.props
+
+    if (answered === true) {
+
+    } else {
+
+    }
+
     return (
       <div>
         <h3 className='center'>Questions</h3>
-        {/* <ul className='dashboard-list'>
-          {this.props.tweetIds.map((id) => (
+        <ul className='dashboard-list'>
+          {questionIds.map((id) => (
             <li key={id}>
-              <Tweet id={id} />
+              <p>{id}</p>
+              <Question id={id} />
             </li>
           ))}
-        </ul> */}
+        </ul>
       </div>
     )
   }
 }
 
-// function mapStateToProps ( { questions }) {
-//
-//   return {
-//     tweetIds: Object.keys(tweets)
-//       .sort((a,b) => tweets[b].timestamp - tweets[a].timestamp)
-//   }
-// }
+function mapStateToProps ( { questions }) {
 
-// export default connect(mapStateToProps)(Dashboard)
-export default Dashboard
+  return {
+    questionIds: Object.keys(questions)
+    // TODO: sort by category
+      // .sort((a,b) => tweets[b].timestamp - tweets[a].timestamp)
+  }
+}
+
+export default connect(mapStateToProps)(Dashboard)

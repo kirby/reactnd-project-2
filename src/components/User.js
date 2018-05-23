@@ -18,9 +18,11 @@ class User extends Component {
         />
         <div>
           <span>{name}</span>
-          {asked}
-          {answered}
-          {score}
+          <pre>
+            {asked} + 
+            {answered} =
+            {score}
+          </pre>
         </div>
       </div>
     )

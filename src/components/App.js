@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
 import LoadingBar from 'react-redux-loading'
-// import NewQuestion from './NewQuestion'
+import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
 import Nav from './Nav'
 
@@ -25,6 +25,7 @@ class App extends Component {
               ? null
               : <div>
                   <Route path='/' exact component={Dashboard} />
+                  <Route path='/add' component={NewQuestion} />
                   <Route path='/leaderboard' component={Leaderboard} />
                 </div>
             }
@@ -36,7 +37,6 @@ class App extends Component {
 }
 
 // <Route path='/questions/:id' component={Questions} />
-// <Route path='/add' component={NewQuestion} />
 
 function mapStateToProps({ authedUser }) {
   return {
