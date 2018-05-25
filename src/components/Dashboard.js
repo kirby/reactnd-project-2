@@ -5,7 +5,7 @@ import Question from './Question'
 class Dashboard extends Component {
 
   state = {
-    answered: false,
+    answered: true,
   }
 
   render() {
@@ -16,15 +16,16 @@ class Dashboard extends Component {
     let questionIds = []
 
     if (Object.keys(questions).length > 0) {
-      console.log('Dashboard: ', questions)
-      if (answered === false) {
-        for (const key of Object.keys(questions)) {
-          if (questions[key].optionOne.votes.includes(authedUser) + questions[key].optionTwo.votes.includes(authedUser)) {
-            // questionIds[key] = questions[key]
-            // console.log(key, questions[key])
+      for (const key of Object.keys(questions)) {
+        if (answered === true) {
+          if (questions[key].optionOne.votes.includes(authedUser) || questions[key].optionTwo.votes.includes(authedUser)) {
             questionIds.push(key)
             console.log('questionIds: ', questionIds)
-
+          }
+        } else {
+          if (!questions[key].optionOne.votes.includes(authedUser) && !questions[key].optionTwo.votes.includes(authedUser)) {
+            questionIds.push(key)
+            console.log('questionIds: ', questionIds)
           }
         }
       }
