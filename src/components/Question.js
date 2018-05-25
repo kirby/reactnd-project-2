@@ -10,7 +10,7 @@ class Question extends Component {
 
   render() {
 
-    const { question } = this.props
+    const { question, answered } = this.props
     const { optionOne, optionTwo, author } = question
 
     return (
@@ -19,6 +19,7 @@ class Question extends Component {
           <span>{author}</span>
           <span>{optionOne.text}</span>
           <span>{optionTwo.text}</span>
+          <span>{answered}</span>
         </div>
       </div>
     )
@@ -31,7 +32,11 @@ function mapStateToProps ({questions}, {id}) {
   return {
     question: question
       ? question
-      : null
+      : null,
+    answered:
+      (question.optionOne.votes.length +
+      question.optionTwo.votes.length ) > 0
+
   }
 }
 

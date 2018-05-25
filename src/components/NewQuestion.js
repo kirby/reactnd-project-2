@@ -71,7 +71,7 @@ class NewQuestion extends Component {
           <button
             className='btn'
             type='submit'
-            disabled={optionOneText === '' && optionTwoText === ''}>
+            disabled={(optionOneText === '' && optionTwoText === '')}>
               Submit
           </button>
         </form>
