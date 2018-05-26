@@ -5,7 +5,15 @@ import Question from './Question'
 class Dashboard extends Component {
 
   state = {
-    answered: true,
+    answered: false,
+  }
+
+  handleCategory = (answered) => {
+    console.log('handleButton: ', answered)
+
+    this.setState(() => ({
+      answered
+    }))
   }
 
   render() {
@@ -33,6 +41,11 @@ class Dashboard extends Component {
       return (
         <div>
           <h3 className='center'>Questions</h3>
+          <div className='btn-group'>
+            {/* onClick={() => this.handleSort(column) */}
+            <button onClick={() => this.handleCategory(true)}>Answered</button>
+            <button onClick={() => this.handleCategory(false)}>Unanswered</button>
+          </div>
           <ul className='dashboard-list'>
             {questionIds.map((id) => (
               <li key={id}>
