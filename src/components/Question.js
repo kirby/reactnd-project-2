@@ -1,27 +1,33 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link, withRouter } from 'react-router-dom'
 
 class Question extends Component {
 
   toParent = (e, id) => {
     e.preventDefault()
-    this.props.history.push(`/question/${id}`)
+    this.props.history.push(`/questions/${id}`)
   }
 
   render() {
 
-    const { question, answered } = this.props
+    const { question, answered, id } = this.props
     const { optionOne, optionTwo, author } = question
 
     return (
-      <div>
+      <Link to={`/questions/${id}`} className=''>
         <div>
           <span>{author}</span>
+          <button
+            className=''
+            onClick={(e) => this.toParent(e, id)}>
+            Question Details
+          </button>
           <span>{optionOne.text}</span>
           <span>{optionTwo.text}</span>
           <span>{answered}</span>
         </div>
-      </div>
+      </Link>
     )
   }
 }
@@ -40,4 +46,4 @@ function mapStateToProps ({questions}, {id}) {
   }
 }
 
-export default connect(mapStateToProps)(Question)
+export default withRouter(connect(mapStateToProps)(Question))

@@ -42,7 +42,6 @@ class Dashboard extends Component {
         <div>
           <h3 className='center'>Questions</h3>
           <div className='btn-group'>
-            {/* onClick={() => this.handleSort(column) */}
             <button onClick={() => this.handleCategory(true)}>Answered</button>
             <button onClick={() => this.handleCategory(false)}>Unanswered</button>
           </div>

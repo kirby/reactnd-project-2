@@ -6,6 +6,7 @@ import Dashboard from './Dashboard'
 import LoadingBar from 'react-redux-loading'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
+import QuestionDetail from './QuestionDetail'
 import Nav from './Nav'
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/add' component={NewQuestion} />
                   <Route path='/leaderboard' component={Leaderboard} />
+                  <Route path='/questions/:id' component={QuestionDetail} />
                 </div>
             }
           </div>
@@ -35,8 +37,6 @@ class App extends Component {
     );
   }
 }
-
-// <Route path='/questions/:id' component={Questions} />
 
 function mapStateToProps({ authedUser }) {
   return {
