@@ -68,7 +68,8 @@ class Dashboard extends Component {
 function mapStateToProps ( { questions, authedUser }) {
   return {
     authedUser,
-    questionIds: Object.keys(questions),
+    questionIds: Object.keys(questions)
+    .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
     questions
   }
 }

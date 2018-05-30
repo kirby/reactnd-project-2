@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import Login from './Login'
 import Dashboard from './Dashboard'
 import LoadingBar from 'react-redux-loading'
 import NewQuestion from './NewQuestion'
@@ -23,7 +24,7 @@ class App extends Component {
           <div className='container'>
             <Nav />
             {this.props.loading === true
-              ? null
+              ? <Login />
               : <div>
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/add' component={NewQuestion} />
@@ -44,4 +45,4 @@ function mapStateToProps({ authedUser }) {
   }
 }
 
-export default connect()(App);
+export default connect(mapStateToProps)(App);
