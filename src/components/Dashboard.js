@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
+import UserInfo from './UserInfo'
 
 class Dashboard extends Component {
 
@@ -40,7 +41,7 @@ class Dashboard extends Component {
 
       return (
         <div>
-          <h3 className='center'>Questions</h3>
+          <UserInfo title='questions'/>
           <div className='btn-group'>
             <button onClick={() => this.handleCategory(true)}>Answered</button>
             <button onClick={() => this.handleCategory(false)}>Unanswered</button>
@@ -69,7 +70,7 @@ function mapStateToProps ( { questions, authedUser }) {
   return {
     authedUser,
     questionIds: Object.keys(questions)
-    .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
+      .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
     questions
   }
 }

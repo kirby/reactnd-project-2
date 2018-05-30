@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import UserInfo from './UserInfo'
 import User from './User'
 
 class Leaderboard extends Component {
@@ -8,7 +9,8 @@ class Leaderboard extends Component {
     const { userIds } = this.props
     return (
       <div>
-        <h3 className='center'>Leaderboard</h3>
+        {/* <h3 className='center'>Leaderboard</h3> */}
+        <UserInfo title='Leaderboard'/>
         <ul className='leaderboard-list'>
           {userIds.map((id) => (
             <li key={id}>

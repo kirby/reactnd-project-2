@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import UserInfo from './UserInfo'
 import { handleAddQuestion } from '../actions/questions'
 import { Redirect } from 'react-router-dom'
 
@@ -52,7 +53,8 @@ class NewQuestion extends Component {
 
     return (
       <div>
-        <h3 className='center'>Compose New Question</h3>
+        {/* <h3 className='center'>Compose New Question</h3> */}
+        <UserInfo title='Create Poll'/>
         <form className='new-question' onSubmit={this.handleSubmit}>
           <textarea
             placeholder='drink coffee'

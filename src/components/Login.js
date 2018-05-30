@@ -32,7 +32,7 @@ class Login extends Component {
   }
 
   render() {
-    const { toHome } = this.state
+    const { userId, toHome } = this.state
     const { userIds, users } = this.props
 
     if (toHome === true) {
@@ -44,14 +44,20 @@ class Login extends Component {
         <h3>Login</h3>
         <form onSubmit={this.handleSubmit}>
           <label>
-            User:
-            <select value={this.state.value} onChange={this.handleChange}>
+            {/* User: */}
+            <select value={userId} onChange={this.handleChange}>
+              <option key='noauth' value='' disabled defaultValue>Username</option>
               {userIds.map((id) => (
                 <option key={id} value={id}>{users[id].name}</option>
               ))}
             </select>
           </label>
-          <input type="submit" value="Submit" />
+          {/* <input type="submit" value="Submit" /> */}
+          <button
+            type='submit'
+            disabled={userId === ''}>
+              Login
+          </button>
         </form>
       </div>
     )
