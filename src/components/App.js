@@ -40,7 +40,6 @@ class App extends Component {
 }
 
 function mapStateToProps({ authedUser }) {
-  console.log('App authedUser = ', authedUser)
   return {
     loading: authedUser === null
   }

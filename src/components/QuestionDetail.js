@@ -1,39 +1,40 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-// "8xf0y6ziyjabvozdd253nd": {
-//   id: '8xf0y6ziyjabvozdd253nd',
-//   author: 'sarahedo',
-//   timestamp: 1467166872634,
-//   optionOne: {
-//     votes: ['sarahedo'],
-//     text: 'have horrible short term memory',
-//   },
-//   optionTwo: {
-//     votes: [],
-//     text: 'have horrible long term memory'
-//   }
-// },
+import UserInfo from './UserInfo'
+import { handleAnswerQuestion } from '../actions/questions'
 
 class QuestionDetail extends Component {
 
+  handleAnswer = (answer) => {
+    const { dispatch, authedUser, qid } = this.props
+
+    dispatch(handleAnswerQuestion({
+      authedUser,
+      qid,
+      answer
+    }))
+  }
+
   render() {
-
-    console.log('QuestionDetail: ', this.props)
-
     const { id, question } = this.props
-
     const {
       author, optionOne, optionTwo
     } = question
-    console.log('QuestionDetail: ', optionOne, optionTwo)
 
     return (
       <div>
-        <p>Question Detail</p>
-        <p>{optionOne.text}</p>
-        <p>{optionTwo.text}</p>
-
+        <UserInfo />
+        <h3>Would you rather?</h3>
+        <div className='wyr-btn-group'>
+          <button
+            onClick={() => this.handleAnswer('optionOne')}>
+              {optionOne.text}
+          </button>
+          <button
+            onClick={() => this.handleAnswer('optionTwo')}>
+              {optionTwo.text}
+          </button>
+        </div>
       </div>
     )
   }
@@ -42,11 +43,11 @@ class QuestionDetail extends Component {
 
 function mapStateToProps ( {authedUser, questions}, props ) {
   const { id } = props.match.params
-  console.log('mapStateToProps: ', props)
   const question = questions[id]
 
   return {
     authedUser,
+    qid: id,
     question: question
       ? question
       : null

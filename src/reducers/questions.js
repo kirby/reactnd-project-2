@@ -1,6 +1,6 @@
-import { RECEIVE_QUESTIONS, ADD_QUESTION } from '../actions/questions'
+import { RECEIVE_QUESTIONS, ADD_QUESTION, SAVE_QUESTION_ANSWER } from '../actions/questions'
 
-export default function users (state = {}, action) {
+export default function questions (state = {}, action) {
   switch(action.type) {
     case RECEIVE_QUESTIONS :
       return {
@@ -11,6 +11,20 @@ export default function users (state = {}, action) {
       return {
         ...state,
         [action.question.id]: action.question
+      }
+    case SAVE_QUESTION_ANSWER :
+      console.log('reducers/questions: ', action)
+      const { qid, authedUser, answer } = action
+      const question = state[qid]
+      return {
+        ...state,
+        [qid]: {
+          ...question,
+          [answer]: {
+            ...question[answer],
+            votes: [...question[answer].votes, authedUser]
+          }
+        }
       }
     default :
       return state

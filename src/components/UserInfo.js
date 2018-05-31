@@ -44,27 +44,13 @@ class UserInfo extends Component {
             </div>
           </div>
         </div>
-        {/* <div>
-          <img
-            src={avatarURL}
-            alt={`Avatar of ${name}`}
-            className='avatar'
-          />
-        </div>
         <div>
           <h4>{name}</h4>
-        </div> */}
+        </div>
       </div>
     )
   }
 }
-
-{/* <div class="container">
-  <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
-  <div class="middle">
-    <div class="text">John Doe</div>
-  </div>
-</div> */}
 
 function mapStateToProps({ users, authedUser }, { title }) {
 

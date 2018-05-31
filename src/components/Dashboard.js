@@ -10,8 +10,6 @@ class Dashboard extends Component {
   }
 
   handleCategory = (answered) => {
-    console.log('handleButton: ', answered)
-
     this.setState(() => ({
       answered
     }))
@@ -29,22 +27,31 @@ class Dashboard extends Component {
         if (answered === true) {
           if (questions[key].optionOne.votes.includes(authedUser) || questions[key].optionTwo.votes.includes(authedUser)) {
             questionIds.push(key)
-            console.log('questionIds: ', questionIds)
           }
         } else {
           if (!questions[key].optionOne.votes.includes(authedUser) && !questions[key].optionTwo.votes.includes(authedUser)) {
             questionIds.push(key)
-            console.log('questionIds: ', questionIds)
           }
         }
       }
+
+      const classNameAnswered = answered ? 'category-button active' : 'category-button'
+      const classNameUnanswered = answered ? 'category-button' : 'category-button active'
 
       return (
         <div>
           <UserInfo title='questions'/>
           <div className='btn-group'>
-            <button onClick={() => this.handleCategory(true)}>Answered</button>
-            <button onClick={() => this.handleCategory(false)}>Unanswered</button>
+            <button
+              className={classNameAnswered}
+              onClick={() => this.handleCategory(true)}>
+                Answered
+            </button>
+            <button
+              className={classNameUnanswered}
+              onClick={() => this.handleCategory(false)}>
+                Unanswered
+            </button>
           </div>
           <ul className='dashboard-list'>
             {questionIds.map((id) => (
