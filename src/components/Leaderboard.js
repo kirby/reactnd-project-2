@@ -10,6 +10,7 @@ class Leaderboard extends Component {
     return (
       <div>
         <UserInfo title='Leaderboard'/>
+
         <ul className='leaderboard-list'>
           {userIds.map((id) => (
             <li key={id}>

@@ -80,9 +80,13 @@ li {
   background-color: white;
 }
 
+.flex-container-wyr {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
 .flex-container > div {
-  /* margin: 2px;
-  padding: 5px; */
   font-size: 20px;
 }
 
@@ -97,8 +101,6 @@ li {
   margin: 10px;
   opacity: 1;
   display: block;
-  /* width: 100%; */
-  /* height: auto; */
   transition: .5s ease;
   backface-visibility: hidden;
 }

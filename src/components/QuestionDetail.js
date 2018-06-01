@@ -46,14 +46,17 @@ class QuestionDetail extends Component {
       <div>
         <UserInfo />
 
-        <h3 className='center'>Would you rather?</h3>
-
-        <div className='center'>
-          <img
-            src={avatarURL}
-            alt={`Avatar of ${name}`}
-            className='avatar-image'
-          />
+        <div className='flex-container-wyr'>
+          <div className='avatar-container'>
+            <img
+              src={avatarURL}
+              alt={`Avatar of ${name}`}
+              className='avatar-image'
+            />
+          </div>
+          <div>
+            <h4><i>{user.name} asks, Would you rather?</i></h4>
+          </div>
         </div>
 
         <div>

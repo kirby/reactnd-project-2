@@ -10,19 +10,16 @@ class User extends Component {
     const { name, avatar, asked, answered, score } = user
 
     return (
-      <div>
-        <img
-          src={avatar}
-          alt={`avatar of ${name}`}
-          className='avatar'
-        />
+      <div className='flex-container-wyr'>
+        <div className='avatar-container'>
+          <img
+            src={avatar}
+            alt={`avatar of ${name}`}
+            className='avatar-image'
+          />
+        </div>
         <div>
-          <span>{name}</span>
-          <pre>
-            {asked} + 
-            {answered} =
-            {score}
-          </pre>
+          <i>{name} has asked {asked} questions and answered {answered}</i>
         </div>
       </div>
     )
