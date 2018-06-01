@@ -130,7 +130,7 @@ li {
 }
 
 .category-button {
-  background-color: #4CAF50;
+  background-color: #59CD90;
   border: none;
   border-radius: 5px;
   color: white;
@@ -141,18 +141,81 @@ li {
   font-size: 12px;
   margin: 4px 2px;
   cursor: pointer;
+  width: 49%;
+  opacity: 0.3;
+}
+
+.category-button:hover {
+  opacity: 1.0;
+}
+
+.category-button-active {
+  background-color: #59CD90;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 49%;
+}
+
+.wyr-btn-question-group button {
+  background-color: #59CD90;
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+  width: 50%;
+  border: none;
+  margin-bottom: 2px;
+  opacity: 0.80;
 }
 
 .wyr-btn-group button {
-    background-color: #4CAF50; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
+    background-color: #59CD90;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+    width: 50%;
+    height: 200px;
 }
 
-/* Clear floats (clearfix hack) */
+.wyr-btn-group-a button {
+    background-color: #EE6352;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+    width: 50%;
+    height: 200px;
+    opacity: 0.9;
+}
+
+.wyr-btn-group-a button:hover {
+    opacity: 1.0;
+}
+
+.wyr-btn-group-b button {
+    background-color: #3FA7D6;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+    width: 50%;
+    height: 200px;
+    opacity: 0.9;
+}
+
+.wyr-btn-group-b button:hover {
+    opacity: 1.0;
+}
+
 .wyr-btn-group:after {
     content: "";
     clear: both;
@@ -160,10 +223,9 @@ li {
 }
 
 .wyr-btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+    border-right: none;
 }
 
-/* Add a background color on hover */
 .wyr-btn-group button:hover {
     background-color: #3e8e41;
 }

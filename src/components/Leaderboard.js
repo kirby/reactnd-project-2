@@ -9,7 +9,6 @@ class Leaderboard extends Component {
     const { userIds } = this.props
     return (
       <div>
-        {/* <h3 className='center'>Leaderboard</h3> */}
         <UserInfo title='Leaderboard'/>
         <ul className='leaderboard-list'>
           {userIds.map((id) => (

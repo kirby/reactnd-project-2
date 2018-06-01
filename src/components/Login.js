@@ -41,10 +41,9 @@ class Login extends Component {
 
     return (
       <div>
-        <h3>Login</h3>
+        <h3>Please select a user</h3>
         <form onSubmit={this.handleSubmit}>
           <label>
-            {/* User: */}
             <select value={userId} onChange={this.handleChange}>
               <option key='noauth' value='' disabled defaultValue>Username</option>
               {userIds.map((id) => (
@@ -52,7 +51,6 @@ class Login extends Component {
               ))}
             </select>
           </label>
-          {/* <input type="submit" value="Submit" /> */}
           <button
             type='submit'
             disabled={userId === ''}>

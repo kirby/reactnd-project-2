@@ -35,8 +35,12 @@ class Dashboard extends Component {
         }
       }
 
-      const classNameAnswered = answered ? 'category-button active' : 'category-button'
-      const classNameUnanswered = answered ? 'category-button' : 'category-button active'
+      const classNameAnswered = answered ?
+        'category-button-active' :
+        'category-button'
+      const classNameUnanswered = answered ?
+        'category-button' :
+        'category-button-active'
 
       return (
         <div>
@@ -56,7 +60,6 @@ class Dashboard extends Component {
           <ul className='dashboard-list'>
             {questionIds.map((id) => (
               <li key={id}>
-                <p>{id}</p>
                 <Question id={id} />
               </li>
             ))}

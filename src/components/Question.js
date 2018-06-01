@@ -16,16 +16,15 @@ class Question extends Component {
 
     return (
       <Link to={`/questions/${id}`} className=''>
-        <div>
-          <span>{author}</span>
+        <div className='wyr-btn-question-group'>
           <button
-            className=''
             onClick={(e) => this.toParent(e, id)}>
-            Question Details
+              {optionOne.text}
           </button>
-          <span>{optionOne.text}</span>
-          <span>{optionTwo.text}</span>
-          <span>{answered}</span>
+          <button
+            onClick={(e) => this.toParent(e, id)}>
+              {optionTwo.text}
+          </button>
         </div>
       </Link>
     )
