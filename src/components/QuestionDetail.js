@@ -38,21 +38,23 @@ class QuestionDetail extends Component {
       voteCount,
       voteCountOne,
       voteCountTwo } = this.props
+
     const { optionOne, optionTwo } = question
     const { name, avatarURL } = user
 
     const textOne = answeredOne ?
       voteCountOne > 1 ?
-        'You and ' + voteCountOne - 1 + ' other people voted for this!' :
+        'You and ' + (voteCountOne - 1) + ' other people voted for this!' :
         'You voted for this!' :
       voteCountOne + ' votes'
     const percentOne = ((voteCountOne / voteCount) * 100).toFixed(2)
-    const percentTwo = ((voteCountTwo / voteCount) * 100).toFixed(2)
+
     const textTwo = answeredTwo ?
       voteCountTwo > 1 ?
-        'You and ' + voteCountTwo - 1 + ' other people voted for this!' :
+        'You and ' + (voteCountTwo - 1) + ' other people voted for this!' :
         'You voted for this!' :
       voteCountTwo + ' votes'
+    const percentTwo = ((voteCountTwo / voteCount) * 100).toFixed(2)
 
     return (
       <div>
