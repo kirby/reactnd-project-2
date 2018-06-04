@@ -17,9 +17,21 @@ class QuestionDetail extends Component {
 
   render() {
     const {
-      question,
+      question
+    } = this.props
+
+    if (question === null) {
+      return (
+        <div>
+          <UserInfo />
+
+          <h2>Question not found</h2>
+        </div>
+      )
+    }
+
+    const {
       user,
-      authedUser,
       answered,
       answeredOne,
       answeredTwo,
@@ -104,6 +116,13 @@ class QuestionDetail extends Component {
 function mapStateToProps ( {authedUser, questions, users}, props ) {
   const { id } = props.match.params
   const question = questions[id]
+  console.log('mapStateToProps: ', question)
+  if (question === undefined) {
+    return {
+      authedUser,
+      question: null
+    }
+  }
   const user = users[question.author]
   const answered =
     question.optionOne.votes.includes(authedUser) ||

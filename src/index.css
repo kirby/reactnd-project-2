@@ -231,3 +231,21 @@ li {
 .wyr-btn-group button:hover {
     background-color: #3e8e41;
 }
+
+.textarea-a {
+  width: 48%;
+  resize: none;
+  background-color: #EE6352;
+  outline: none;
+}
+
+.textarea-b {
+  width: 48%;
+  resize: none;
+  background-color: #3FA7D6;
+  outline: none;
+}
+
+.vertical-align {
+  vertical-align: middle;
+}

@@ -25,7 +25,7 @@ class UserInfo extends Component {
       return <Redirect to='/' />
     }
 
-    const { user, title } = this.props
+    const { user } = this.props
     const { name, avatarURL } = user
 
     return (

@@ -11,8 +11,8 @@ class Question extends Component {
 
   render() {
 
-    const { question, answered, id } = this.props
-    const { optionOne, optionTwo, author } = question
+    const { question, id } = this.props
+    const { optionOne, optionTwo } = question
 
     return (
       <Link to={`/questions/${id}`} className=''>

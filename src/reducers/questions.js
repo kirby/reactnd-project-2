@@ -13,7 +13,6 @@ export default function questions (state = {}, action) {
         [action.question.id]: action.question
       }
     case SAVE_QUESTION_ANSWER :
-      console.log('reducers/questions: ', action)
       const { qid, authedUser, answer } = action
       const question = state[qid]
       return {

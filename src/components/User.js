@@ -7,7 +7,7 @@ class User extends Component {
   render() {
 
     const { user } = this.props
-    const { name, avatar, asked, answered, score } = user
+    const { name, avatar, asked, answered } = user
 
     return (
       <div className='flex-container-wyr'>
@@ -19,7 +19,7 @@ class User extends Component {
           />
         </div>
         <div>
-          <i>{name} has asked {asked} questions and answered {answered}</i>
+          <h4><i>{name} has asked {asked} questions and answered {answered}</i></h4>
         </div>
       </div>
     )

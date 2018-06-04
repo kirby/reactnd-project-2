@@ -53,28 +53,27 @@ class NewQuestion extends Component {
 
     return (
       <div>
-        {/* <h3 className='center'>Compose New Question</h3> */}
         <UserInfo title='Create Poll'/>
         <form className='new-question' onSubmit={this.handleSubmit}>
           <textarea
+            className='textarea-a'
             placeholder='drink coffee'
             value={optionOneText}
             onChange={this.handleChangeOne}
-            className='textarea'
             maxLength={100}
           />
           <textarea
+            className='textarea-b'
             placeholder='drink tea'
             value={optionTwoText}
             onChange={this.handleChangeTwo}
-            className='textarea'
             maxLength={100}
           />
           <button
             className='btn'
             type='submit'
-            disabled={(optionOneText === '' && optionTwoText === '')}>
-              Submit
+            disabled={optionOneText === '' || optionTwoText === ''}>
+              Add Question
           </button>
         </form>
       </div>
