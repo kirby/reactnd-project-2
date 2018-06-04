@@ -10,7 +10,7 @@
 4. Add a new question
 5. Logout (hover over user avatar image)
 
-![screenshot](https://cl.ly/2h3T1E0O2q0z)
+![screenshot](https://d3vv6lp55qjaqc.cloudfront.net/items/0w2Z3t2q2v3Z3r0l0Q3Y/Image%202018-06-03%20at%209.17.28%20PM.png?X-CloudApp-Visitor-Id=fff71d6bc17b4f2ef71400f8f21231cc&v=e98dec69)
 
 
 
